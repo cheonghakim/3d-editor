@@ -1,0 +1,15 @@
+@import "@/css/reset/reset.css";
+
+// 라이브러리 CSS
+@import "@mdi/font/css/materialdesignicons.min.css";
+@import "bootstrap/dist/css/bootstrap.css";
+@import "bootstrap-vue-next/dist/bootstrap-vue-next.css";
+@import "vue-dock-menu/dist/assets/output-254cc55b.css";
+
+// 기본 CSS
+@import "@/css/style/vars.scss";
+@import "@/css/style/index.scss";
+@import "@/css/style/layout.scss";
+
+// 커스텀 CSS
+@import "@/css/custom/vue-dock-menu-custom.scss";

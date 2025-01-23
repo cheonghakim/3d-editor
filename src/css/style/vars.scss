@@ -1,0 +1,58 @@
+$side-menu-width: 50px;
+$top-menu-height: 50px;
+
+// main colors
+$blue: #0c7feb;
+$indigo: #483ca2;
+$purple: #6f42c1;
+$doom: #e22a24;
+$red: #e84444;
+$orange: #f1734f;
+$yellow: #ebab41;
+$green: #22cc00;
+$apple-green: #abea19;
+$teal: #050505;
+$cyan: #429ae8;
+$gray: #74788d;
+$white: #eff2f7;
+$dark: #363a3f;
+$mint: #07ebcf;
+$sky: #07ebcf;
+$sky2: #4b96e6;
+$lightgreen: #34c38f;
+
+// light - theme colors
+$light-font-inverse: black;
+$light-bg-color: #f6f6f8;
+$light-menubar-color: rgba(255, 255, 255, 0.8);
+$light-theme-font-color: black;
+$light-menubar-font-color: rgb(119 119 119);
+$light-menu-border-color: #ececec;
+$light-card-bg-color: #ffffff;
+$light-inverse-font-color: #ffffff;
+$light-mode-hr: #cbcbcb;
+
+// light - vue-dock-menu
+$light-vue-dock-btn-color: rgba(255, 255, 255, 0.8);
+$light-vue-dock-menu-color: #ffffff;
+$light-vue-dock-tertiary-color: rgba(198, 198, 198, 0.4);
+$light-vue-dock-text-color: black;
+$light-vue-dock-hover-color: #50a5f1;
+
+// dark - theme colors
+$dark-font-inverse: white;
+$dark-bg-color: #232a39;
+$dark-menubar-color: rgba(52, 58, 72, 0.402);
+$dark-theme-font-color: #e2e2e2;
+$dark-menubar-font-color: rgb(186, 186, 186);
+$dark-menu-border-color: transparent;
+$dark-card-bg-color: #343a48;
+$dark-inverse-font-color: #000;
+$dark-mode-hr: #3c4251;
+
+// dark - vue-dock-menu
+$dark-vue-dock-btn-color: rgba(9, 44, 128, 0.4);
+$dark-vue-dock-menu-color: #343a48;
+$dark-vue-dock-tertiary-color: rgba(52, 58, 72, 0.4);
+$dark-vue-dock-text-color: #fff;
+$dark-vue-dock-hover-color: #00b2ff;

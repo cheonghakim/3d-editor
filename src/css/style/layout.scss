@@ -1,0 +1,44 @@
+#layoutRoot {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  .content-area {
+    position: absolute;
+    background-color: rgb(82, 82, 82);
+    width: 100%;
+    height: calc(100% - 30px);
+    top: 30px;
+
+    .side-nav {
+      background-color: #454545;
+      width: 50px;
+      height: 100%;
+      padding: 0.45rem;
+
+      .side-list {
+        padding: 0px;
+        margin: 0px;
+        .item-container {
+          cursor: pointer;
+          text-align: center;
+          .item-icon {
+            font-size: 1.5rem;
+            color: #acacac;
+          }
+
+          .item-icon:hover {
+            font-size: 1.5rem;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .window-view {
+      width: calc(100% - 50px);
+      height: 100%;
+      padding: 0.2rem;
+    }
+  }
+}

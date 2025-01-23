@@ -1,0 +1,114 @@
+.menu-bar-container {
+  height: 30px !important;
+  z-index: 1000 !important;
+
+  .menu-container > .menu-wrapper {
+    background: rgb(91, 91, 91) !important;
+  }
+
+  .main-area-top-bottom {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .menu-top-title {
+      color: #fff;
+    }
+  }
+
+  .main-area-left-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .name-container.left:not(.expanded),
+  .name-container.right:not(.expanded) {
+    font-size: 1.5rem !important;
+  }
+
+  .menu-bar-items {
+    .v-dock-menu-bar-item-wrapper {
+      height: 100%;
+    }
+    .menu-bar-item-container {
+      border-radius: 5px;
+      .name-container {
+        font-size: 12px;
+      }
+    }
+
+    .menu-bar-item-container:hover {
+      background-color: #757575 !important;
+      span {
+        color: #e2e2e2 !important;
+      }
+    }
+  }
+
+  .menu-item {
+    font-size: 12px;
+  }
+
+  .menu-item:hover {
+    background-color: #757575 !important;
+    color: #e2e2e2 !important;
+    border-radius: 5px;
+  }
+
+  .menu-button {
+    height: 35px;
+    width: 35px;
+    background: linear-gradient(90deg, #6fd4ff, #757575);
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 3px;
+  }
+
+  .menu-button-horizon {
+    height: 35px;
+    width: 35px;
+    background: transparent;
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+  }
+  .menu-button-horizon:hover,
+  .btn-transparent > .btn-check:checked + .btn,
+  .btn-transparent > :not(.btn-check) + .btn:active,
+  .btn-transparent > .btn:first-child:active,
+  .btn-transparent > .btn.active,
+  .btn.show {
+    background-color: transparent !important;
+    color: white;
+  }
+}
+
+.menu-bar-container.left {
+  top: 30px !important;
+  height: 100% !important;
+}
+
+.menu-bar-item-container.left,
+.menu-bar-item-container.right {
+  width: 70% !important;
+}
+
+// css custom -> 라이브러리에서 커스텀해도 css가 잘 안먹어서 커스텀함
+.top.menu-bar-container,
+.bottom.menu-bar-container {
+  justify-content: space-between;
+}
+
+// CUSTOM_RIGHT_AREA**
+.left > .right-area,
+.right > .right-area {
+  height: 100%;
+  width: 100%;
+}
+
+.top > .right-area,
+.bottom > .right-area {
+  height: 100%;
+}
