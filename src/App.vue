@@ -1,32 +1,12 @@
 <script setup lang="ts">
 import HeaderComp from "@/components/layout/HeaderComp.vue";
 import SideNavComp from "@/components/layout/SideNavComp.vue";
+import ShortCutComp from "@/components/layout/ShortCutComp.vue";
 import WindowView from "@/view/v1/window/WindowView.vue";
 
-import { ref } from "vue";
+import { useKeyboardEvents } from "@/plugins/keyEvents.ts";
 
-const downSpace = ref(false);
-
-window.addEventListener("keydown", (e: KeyboardEvent) => {
-  if (!downSpace.value) {
-    return;
-  }
-
-  const key = e.keyCode;
-  if (key === 32) {
-    downSpace.value = true;
-    console.log("open!");
-  }
-});
-
-window.addEventListener("keyup", (e: KeyboardEvent) => {
-  const key = e.keyCode;
-
-  if (key === 32) {
-    console.log("close!");
-    downSpace.value = false;
-  }
-});
+const { downSpace } = useKeyboardEvents();
 </script>
 
 <template>
@@ -36,6 +16,12 @@ window.addEventListener("keyup", (e: KeyboardEvent) => {
       <SideNavComp></SideNavComp>
 
       <WindowView></WindowView>
+    </div>
+
+    <div class="d-flex flex-column short-cut" v-if="downSpace">
+      <div class="mb-4 line">
+        <ShortCutComp></ShortCutComp>
+      </div>
     </div>
   </div>
 </template>
