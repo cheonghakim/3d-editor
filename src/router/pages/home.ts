@@ -6,18 +6,16 @@ export default [
       import(
         /* webpackChunkName: "Home" */ "@/views/v1/layout/DefaultLayout.vue"
       ),
-    meta: {
-      requiresAuth: true,
-    },
-    children: [],
-  },
-  {
-    path: "/login",
-    name: "Login",
-    component: () =>
-      import(/* webpackChunkName: "Guest" */ "@/views/v1/login/UserLogin.vue"),
-    meta: {
-      requiresAuth: false,
-    },
+    redirect: "/editor",
+    children: [
+      {
+        path: "editor",
+        name: "Editor",
+        component: () =>
+          import(
+            /* webpackChunkName: "Home" */ "@/views/v1/editor/3DEditor.vue"
+          ),
+      },
+    ],
   },
 ];
