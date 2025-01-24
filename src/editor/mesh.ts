@@ -1,6 +1,7 @@
+import { type IMesh } from "./types/editor";
 import Object3D from "./object3d";
 
-export default class Mesh extends Object3D {
+export default class Mesh extends Object3D implements IMesh {
   geometry: any;
   material: any;
   constructor(geometry: any, material: any) {

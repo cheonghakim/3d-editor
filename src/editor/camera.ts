@@ -1,6 +1,7 @@
+import { type ICamera } from "./types/editor";
 import { mat4, type ReadonlyVec3 } from "gl-matrix";
 
-export default class Camera {
+export default class Camera implements ICamera {
   position: ReadonlyVec3 = [0, 0, 5];
   target: ReadonlyVec3 = [0, 0, 0];
   up: ReadonlyVec3 = [0, 1, 0];

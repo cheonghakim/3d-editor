@@ -1,7 +1,9 @@
-import type Camera from "./camera.ts";
 import Mesh from "./mesh.ts";
-import { mat4, type ReadonlyVec3 } from "gl-matrix";
+import Scene from "./scene.ts";
+import Camera from "./camera.ts";
+import { mat4 } from "gl-matrix";
 import WebGLProgramManager from "./webGLProgramManager.ts";
+import Object3D from "./object3d.ts";
 
 export default class Renderer {
   gl: WebGLRenderingContext | null = null;
@@ -10,7 +12,7 @@ export default class Renderer {
     if (!this.gl) throw new Error("WebGL not supported");
   }
 
-  render(scene: any, camera: any) {
+  render(scene: Scene, camera: Camera) {
     const gl = this.gl;
 
     if (gl) {
@@ -105,8 +107,8 @@ export default class Renderer {
       material.vertexShader,
       material.fragmentShader
     );
-    // Implement shader program setup here
 
+    // 쉐이더 프로그램 셋업
     gl.useProgram(program);
 
     if (material.uniforms) {
@@ -132,7 +134,7 @@ export default class Renderer {
     material.program = program;
   }
 
-  computeModelMatrix(object: any) {
+  computeModelMatrix(object: Object3D) {
     const modelMatrix = mat4.create();
     mat4.translate(modelMatrix, modelMatrix, object.position);
     mat4.rotateX(modelMatrix, modelMatrix, object.rotation[0]);

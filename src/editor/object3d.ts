@@ -1,7 +1,10 @@
-export default class Object3D {
-  position: any[] = [0, 0, 0];
-  rotation: any[] = [0, 0, 0]; // Euler angles
-  scale: any[] = [1, 1, 1];
+import { type IObject3D } from "./types/editor";
+import { type ReadonlyVec3 } from "gl-matrix";
+
+export default class Object3D implements IObject3D {
+  position: ReadonlyVec3 = [0, 0, 0];
+  rotation: ReadonlyVec3 = [0, 0, 0]; // 오일러 각
+  scale: ReadonlyVec3 = [1, 1, 1];
   children: any[] = [];
 
   constructor() {}

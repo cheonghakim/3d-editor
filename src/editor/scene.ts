@@ -1,6 +1,7 @@
+import { type IScene } from "./types/editor.ts";
 import Camera from "./camera.ts";
 
-export default class Scene {
+export default class Scene implements IScene {
   objects: any[] = [];
   lights: any[] = []; // 조명
   camera: any = null;
