@@ -3,6 +3,67 @@ export class Mat4 {
     public elements: number[] = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
   ) {}
 
+  static perspective(
+    fov: number,
+    aspect: number,
+    near: number,
+    far: number
+  ): Mat4 {
+    const f = 1.0 / Math.tan(fov / 2);
+    const rangeInv = 1.0 / (near - far);
+
+    return new Mat4([
+      f / aspect,
+      0,
+      0,
+      0,
+      0,
+      f,
+      0,
+      0,
+      0,
+      0,
+      (near + far) * rangeInv,
+      2 * near * far * rangeInv,
+      0,
+      0,
+      -1,
+      0,
+    ]);
+  }
+
+  static orthographic(
+    left: number,
+    right: number,
+    bottom: number,
+    top: number,
+    near: number,
+    far: number
+  ): Mat4 {
+    const lr = 1 / (left - right);
+    const bt = 1 / (bottom - top);
+    const nf = 1 / (near - far);
+
+    return new Mat4([
+      -2 * lr,
+      0,
+      0,
+      (left + right) * lr,
+      0,
+      -2 * bt,
+      0,
+      (top + bottom) * bt,
+      0,
+      0,
+      2 * nf,
+      (far + near) * nf,
+      0,
+      0,
+      0,
+      1,
+    ]);
+  }
+
   static identity(): Mat4 {
     return new Mat4();
   }

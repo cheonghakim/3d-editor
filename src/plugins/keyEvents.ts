@@ -1,6 +1,10 @@
-import { onMounted, onUnmounted, ref } from "vue";
+import { onMounted, onUnmounted, ref, type Ref } from "vue";
 
-export function useKeyboardEvents() {
+type TKeyboardEventsReturn = { downSpace: Ref<boolean, boolean> };
+
+type FKeyboardEvents = () => TKeyboardEventsReturn;
+
+function useKeyboardEvents(): TKeyboardEventsReturn {
   const downSpace = ref(false);
 
   const onKeydown = (e: KeyboardEvent) => {
@@ -34,3 +38,5 @@ export function useKeyboardEvents() {
 
   return { downSpace };
 }
+
+export { type TKeyboardEventsReturn, type FKeyboardEvents, useKeyboardEvents };

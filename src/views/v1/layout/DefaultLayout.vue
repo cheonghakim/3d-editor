@@ -3,7 +3,7 @@ import HeaderComp from "@/components/layout/HeaderComp.vue";
 import SideNavComp from "@/components/layout/SideNavComp.vue";
 import ShortCutComp from "@/components/layout/ShortCutComp.vue";
 
-import { useKeyboardEvents } from "@/plugins/keyEvents.ts";
+import { useKeyboardEvents } from "@/plugins/keyEvents";
 
 const { downSpace } = useKeyboardEvents();
 </script>
@@ -14,7 +14,7 @@ const { downSpace } = useKeyboardEvents();
     <div class="content-area d-flex">
       <SideNavComp></SideNavComp>
 
-      <slot></slot>
+      <router-view></router-view>
     </div>
 
     <div class="d-flex flex-column short-cut" v-if="downSpace">

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import WindowView from "@/views/v1/window/WindowView.vue";
+import WindowView from "@/views/v1/editor/WindowView.vue";
 </script>
 
 <template>
