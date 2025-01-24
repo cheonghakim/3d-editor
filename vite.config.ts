@@ -15,6 +15,8 @@ import { ViteMinifyPlugin } from "vite-plugin-minify";
 import { VitePWA } from "vite-plugin-pwa";
 import fs from "fs";
 import gracefulFs from "graceful-fs";
+import Components from "unplugin-vue-components/vite";
+import { BootstrapVueNextResolver } from "bootstrap-vue-next";
 
 gracefulFs.gracefulify(fs);
 // import mkcert from 'vite-plugin-mkcert';
@@ -30,6 +32,14 @@ export default ({ mode }: { mode: any }) => {
     },
     plugins: [
       vue(),
+
+      Components({
+        resolvers: [
+          BootstrapVueNextResolver({
+            resolveIcons: true,
+          }),
+        ],
+      }),
 
       // pinia 개발 도구
       vueDevTools(),

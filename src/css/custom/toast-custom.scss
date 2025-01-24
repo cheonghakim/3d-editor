@@ -1,0 +1,47 @@
+.toast-body {
+  color: rgb(37, 37, 37);
+}
+
+.toast {
+  &.text-bg-info {
+    background-color: $toast-info !important;
+  }
+
+  &.text-bg-success {
+    background-color: $toast-success !important;
+  }
+
+  &.text-bg-warning {
+    background-color: $toast-warning !important;
+  }
+
+  &.text-bg-danger {
+    background-color: $toast-danger !important;
+  }
+
+  &.text-bg-secondary {
+    background-color: $toast-secondary !important;
+  }
+
+  .progress {
+    .text-bg-info {
+      background-color: $toast-info-progress !important;
+    }
+
+    .text-bg-success {
+      background-color: $toast-success-progress !important;
+    }
+
+    .text-bg-warning {
+      background-color: $toast-warning-progress !important;
+    }
+
+    .text-bg-danger {
+      background-color: $toast-danger-progress !important;
+    }
+
+    .text-bg-secondary {
+      background-color: $toast-secondary-progress !important;
+    }
+  }
+}
